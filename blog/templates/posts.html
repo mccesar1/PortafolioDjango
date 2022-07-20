@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{%block content%}
+    <h1>Posts</h1>
+   {%for blogs in blog %}
+    <div class="p-3">
+
+    <div class="card card-body bg-black">
+        <div class="row">
+            <div class="col-3">
+                 <img src="media/{{blogs.image}}" class="img-fluid">
+            </div>
+            <div class="col-9">
+                    <h1>{{blogs.title}}</h1>
+                     <h3 class="my-2 h5 text-muted">{{blogs.date|date:'F j Y' }}</h3>
+                      <h1>{{blogs.description| truncatechars:100}} </h1>
+                       <a  class="btn btn-primary btn-sm" href="{{blogs.id}}">{{blogs.title}}</a>
+
+            </div>
+
+        </div>
+
+
+
+        </div>
+        </div>
+    {% endfor %}
+{%endblock%}

@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{%block content%}
+
+{%load static%}
+<header class="row bg-black">
+    <div class="col-md-4">
+        <img style="width:70%" class="img-thumbnail" src="{% static 'porfolio/yo.jpg'%}">
+    </div>
+    <div class="col-md-8">
+        <h1> Hola mi nombre es <strong>César del Río </strong> </h1>
+        <h3> soy pasante de ingenieria en software, terminé la carrera en enero del 2021</h3>
+        <a href="{% static 'porfolio/CésarDelRíoCV.pdf'%}" class="btn btn-primary btn-lg rounded-0  my-3" target="_blank"> <i class="bi bi-download"></i> Download CV</a>
+    </div>
+</header>
+
+<div class="row my-4 text-center">
+
+    <h3>Mis Proyectos </h3>
+    <p>losadasdasdasdasdsdasdsda</p>
+{% for proyecto in proyectos %}
+
+    <div class="col-md-4 p-4">
+        <div class="card bg-black card-project" >
+            <img src="/media/{{proyecto.image}}" class="card-img-top">
+            <div class="card-body">
+                  <h2>{{proyecto.title}}</h2>
+<!--    <h2>{{proyecto.description}}</h2>-->
+
+
+
+        <a href="{{proyecto.url}}" class="btn btn-light rounded-0 btn-sm" target="_blank"><i class="bi bi-github"></i> Github </a>
+
+
+            </div>
+        </div>
+    </div>
+
+{%endfor%}
+</div>
+{%endblock%}

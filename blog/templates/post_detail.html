@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{%block content%}
+    <div class="text-center">
+    <h1>{{posts.title}}</h1>
+    <h1>{{posts.date}}</h1>
+ <img src="media/{{posts.image}}" class="img-fluid">
+    <div class="my-4">
+        <p>{{posts.description}}</p>
+    </div>
+</div>
+
+
+{% endblock %}
